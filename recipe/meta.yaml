@@ -21,6 +21,7 @@ requirements:
     - {{ compiler("cxx") }}
     - {{ cdt("libnl3-devel") }}
     - {{ cdt("systemd-devel") }}
+    - sysroot_linux-64 2.17  # [linux64]
     - cmake
     - ninja
     - libudev
