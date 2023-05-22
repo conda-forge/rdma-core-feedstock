@@ -12,8 +12,10 @@ source:
     - 0001-Remove-assertions-on-longer-than-sockaddr_un.sun_pat.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux]
+  run_exports:
+    - {{ pin_subpackage("rdma-core") }}
 
 requirements:
   build:
