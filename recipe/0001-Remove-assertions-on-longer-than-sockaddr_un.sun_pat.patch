@@ -1,6 +1,6 @@
-From 2d6d5481b86dcfe980a213c774b95a18851f0b69 Mon Sep 17 00:00:00 2001
+From ba0e693e14162736057c5b5f27150c37e1229296 Mon Sep 17 00:00:00 2001
 From: Peter Andreas Entschev <peter@entschev.com>
-Date: Tue, 25 Apr 2023 08:15:33 -0700
+Date: Mon, 9 Oct 2023 03:10:53 -0700
 Subject: [PATCH] Remove assertions on longer than `sockaddr_un.sun_path`
  buffers
 
@@ -32,10 +32,10 @@ error message is printed and the program aborts.
  create mode 100644 util/conda_forge.h
 
 diff --git a/ibacm/src/acm.c b/ibacm/src/acm.c
-index ab081a07..b18d6479 100644
+index f13617c40..b68fb26a9 100644
 --- a/ibacm/src/acm.c
 +++ b/ibacm/src/acm.c
-@@ -65,6 +65,7 @@
+@@ -64,6 +64,7 @@
  #include <systemd/sd-daemon.h>
  #include <ccan/list.h>
  #include <util/util.h>
@@ -55,7 +55,7 @@ index ab081a07..b18d6479 100644
  		listen_socket = socket(AF_UNIX, SOCK_STREAM, 0);
  		if (listen_socket < 0) {
 diff --git a/ibacm/src/libacm.c b/ibacm/src/libacm.c
-index d09be363..aaeaecb1 100644
+index 74adbf468..08909e027 100644
 --- a/ibacm/src/libacm.c
 +++ b/ibacm/src/libacm.c
 @@ -33,6 +33,7 @@
@@ -66,7 +66,7 @@ index d09be363..aaeaecb1 100644
  #include <stdio.h>
  #include <errno.h>
  #include <netdb.h>
-@@ -102,9 +103,7 @@ static int ib_acm_connect_unix(char *dest)
+@@ -104,9 +105,7 @@ static int ib_acm_connect_unix(char *dest)
  			return errno;
  		}
  	} else {
@@ -78,7 +78,7 @@ index d09be363..aaeaecb1 100644
  
  	sock = socket(AF_UNIX, SOCK_STREAM, 0);
 diff --git a/librdmacm/acm.c b/librdmacm/acm.c
-index 807ff557..97d612aa 100644
+index 807ff5576..97d612aab 100644
 --- a/librdmacm/acm.c
 +++ b/librdmacm/acm.c
 @@ -45,6 +45,7 @@
@@ -101,28 +101,28 @@ index 807ff557..97d612aa 100644
  		if (ret) {
  			close(sock);
 diff --git a/util/CMakeLists.txt b/util/CMakeLists.txt
-index e8646bf2..f3944b88 100644
+index dff267d33..ad42b98da 100644
 --- a/util/CMakeLists.txt
 +++ b/util/CMakeLists.txt
-@@ -1,6 +1,7 @@
- publish_internal_headers(util
+@@ -2,6 +2,7 @@ publish_internal_headers(util
+   bitmap.h
    cl_qmap.h
    compiler.h
 +  conda_forge.h
+   interval_set.h
    node_name_map.h
    rdma_nl.h
-   symver.h
-@@ -9,6 +10,7 @@ publish_internal_headers(util
- 
+@@ -12,6 +13,7 @@ publish_internal_headers(util
  set(C_FILES
+   bitmap.c
    cl_map.c
 +  conda_forge.c
+   interval_set.c
    node_name_map.c
    open_cdev.c
-   rdma_nl.c
 diff --git a/util/conda_forge.c b/util/conda_forge.c
 new file mode 100644
-index 00000000..e8d25a55
+index 000000000..e8d25a552
 --- /dev/null
 +++ b/util/conda_forge.c
 @@ -0,0 +1,41 @@
@@ -169,7 +169,7 @@ index 00000000..e8d25a55
 +#pragma GCC pop_options
 diff --git a/util/conda_forge.h b/util/conda_forge.h
 new file mode 100644
-index 00000000..7cefc004
+index 000000000..7cefc004c
 --- /dev/null
 +++ b/util/conda_forge.h
 @@ -0,0 +1,11 @@
@@ -185,5 +185,5 @@ index 00000000..7cefc004
 +
 +#endif
 -- 
-2.25.1
+2.40.1
 
