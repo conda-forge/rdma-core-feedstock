@@ -15,7 +15,7 @@ build:
   number: 1
   skip: true  # [not linux]
   run_exports:
-    - {{ pin_subpackage("rdma-core", max_pin="x") }}
+    - {{ pin_subpackage("rdma-core") }}
 
 requirements:
   build:
