@@ -33,7 +33,8 @@ requirements:
 test:
   commands:
     - test -f "${PREFIX}/bin/ibv_devices"
-    - ${PREFIX}/bin/ibv_devices
+    # Test `ibv_devices` when building natively
+    - ${PREFIX}/bin/ibv_devices            # [build_platform == target_platform]
 
 about:
   home: https://github.com/linux-rdma/rdma-core
