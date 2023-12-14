@@ -29,6 +29,8 @@ requirements:
     - libudev
     - libsystemd
     - pandoc
+  host:
+    - libnl
 
 test:
   commands:
