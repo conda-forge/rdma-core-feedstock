@@ -21,7 +21,7 @@ requirements:
   build:
     - {{ compiler("c") }}
     - {{ compiler("cxx") }}
-    - {{ cdt("libnl3-devel") }}
+    - libnl
     - {{ cdt("systemd-devel") }}
     - sysroot_linux-64 2.17  # [linux64]
     - cmake
