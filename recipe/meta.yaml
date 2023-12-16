@@ -12,7 +12,7 @@ source:
     - 0001-Remove-assertions-on-longer-than-sockaddr_un.sun_pat.patch
 
 build:
-  number: 1
+  number: 2
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage("rdma-core", max_pin=None) }}
@@ -21,7 +21,6 @@ requirements:
   build:
     - {{ compiler("c") }}
     - {{ compiler("cxx") }}
-    - {{ cdt("libnl3-devel") }}
     - {{ cdt("systemd-devel") }}
     - sysroot_linux-64 2.17  # [linux64]
     - cmake
@@ -29,6 +28,8 @@ requirements:
     - libudev
     - libsystemd
     - pandoc
+  host:
+    - libnl
 
 test:
   commands:
