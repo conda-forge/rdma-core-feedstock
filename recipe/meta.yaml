@@ -22,7 +22,6 @@ requirements:
     - {{ compiler("c") }}
     - {{ stdlib("c") }}
     - {{ compiler("cxx") }}
-    - {{ cdt("systemd-devel") }}
     - cmake
     - ninja
     - libudev
