@@ -24,13 +24,13 @@ requirements:
     - {{ compiler("cxx") }}
     - cmake
     - ninja
-    - libudev
-    - libsystemd
     - pandoc
     - python
     - docutils
   host:
     - libnl
+    - libsystemd
+    - libudev
 
 test:
   commands:
