@@ -27,6 +27,8 @@ requirements:
     - libudev
     - libsystemd
     - pandoc
+    - python
+    - docutils
   host:
     - libnl
 
