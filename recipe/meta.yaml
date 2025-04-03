@@ -25,6 +25,7 @@ requirements:
     - cmake
     - ninja
     - pandoc
+    - pkgconfig
     - python
     - docutils
   host:
