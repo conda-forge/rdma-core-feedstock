@@ -10,6 +10,8 @@ cmake ${CMAKE_ARGS} \
       -D CMAKE_BUILD_TYPE:STRING="${CMAKE_CONFIG}" \
       -D CMAKE_PREFIX_PATH:PATH="${PREFIX}" \
       -D CMAKE_INSTALL_PREFIX:PATH="${PREFIX}" \
+      -D CMAKE_INSTALL_SYSTEMD_BINDIR:PATH="${PREFIX}/lib/systemd" \
+      -D SYSUSERS_DIR:PATH="${PREFIX}/lib/sysusers.d" \
       "${SRC_DIR}" \
 ;
 cmake --build . --parallel ${CPU_COUNT}

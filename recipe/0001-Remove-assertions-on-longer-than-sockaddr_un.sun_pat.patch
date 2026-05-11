@@ -131,6 +131,7 @@ index 000000000..e8d25a552
 +
 +#include <stdlib.h>
 +#include <stdio.h>
++#include <string.h>
 +#include <sys/un.h>
 +#include <util/conda_forge.h>
 +
@@ -162,8 +163,7 @@ index 000000000..e8d25a552
 +
 +void validate_and_copy_path(char* dst, const char* src) {
 +	validate_path_length(src);
-+	strncpy(dst, src, sizeof(dst) - 1);
-+	dst[sizeof(dst) - 1] = '\0';
++	strcpy(dst, src);
 +}
 +
 +#pragma GCC pop_options
@@ -186,4 +186,3 @@ index 000000000..7cefc004c
 +#endif
 -- 
 2.40.1
-
