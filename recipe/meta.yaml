@@ -10,9 +10,10 @@ source:
   sha256: 3a1808f419bad566b33d844b532dd9c899500c7e008615f7a1c0d0ca26b4f1be
   patches:
     - 0001-Remove-assertions-on-longer-than-sockaddr_un.sun_pat.patch
+    - 0002-Allow-overriding-sysusers-install-directory.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage("rdma-core", max_pin=None) }}
