@@ -1,5 +1,5 @@
 {% set name = "rdma-core" %}
-{% set version = "63.0" %}
+{% set version = "64.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://github.com/linux-rdma/rdma-core/archive/v{{ version }}.tar.gz
-  sha256: 3a1808f419bad566b33d844b532dd9c899500c7e008615f7a1c0d0ca26b4f1be
+  sha256: 578ee82131b5aba9bbadaebaa624d2e873ec4103aac712ced74aedcae7bab0da
   patches:
     - 0001-Remove-assertions-on-longer-than-sockaddr_un.sun_pat.patch
     - 0002-Allow-overriding-sysusers-install-directory.patch
 
 build:
-  number: 1
+  number: 0
   skip: true  # [not linux]
   run_exports:
     - {{ pin_subpackage("rdma-core", max_pin=None) }}
