@@ -10,7 +10,6 @@ source:
   sha256: 578ee82131b5aba9bbadaebaa624d2e873ec4103aac712ced74aedcae7bab0da
   patches:
     - 0001-Remove-assertions-on-longer-than-sockaddr_un.sun_pat.patch
-    - 0002-Allow-overriding-sysusers-install-directory.patch
 
 build:
   number: 0
