@@ -1,5 +1,5 @@
 {% set name = "rdma-core" %}
-{% set version = "65.0" %}
+{% set version = "66.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/linux-rdma/rdma-core/archive/v{{ version }}.tar.gz
-  sha256: 714881af1c875f335aee55e94e770894963af3b9bbb6c1248e4a279058dcba58
+  sha256: 385a3f2e7a919fedcf6c9c4bece4d40717c5627b6dbb1fedc805a50dd819c1a1
   patches:
     - 0001-Remove-assertions-on-longer-than-sockaddr_un.sun_pat.patch
 
